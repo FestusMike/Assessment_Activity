@@ -1,4 +1,4 @@
-# User Management API
+# Assessment Activity API
 
 This project provides a RESTful API for managing user accounts, including user creation and updates.
 
