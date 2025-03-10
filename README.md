@@ -13,8 +13,8 @@ This project provides an API for user account management using Django Rest Frame
 
 1. Clone the repository:
    ```sh
-   git clone <repository-url>
-   cd <project-directory>
+   git clone https://github.com/FestusMike/Assessment_Activity
+   cd Assessment_Activity
    ```
 
 2. Create a virtual environment and activate it:
