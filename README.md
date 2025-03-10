@@ -1,39 +1,32 @@
-# Assessment Activity API
+# User Management API
 
-## Overview
-This project provides an API for user account management using Django Rest Framework (DRF). The API supports creating and updating user accounts.
+This project provides a RESTful API for managing user accounts, including user creation and updates.
 
-## Features
-- Create a user with an email address.
-- Update user details including first name, last name, and age.
-- Ensure unique email addresses for user accounts.
-- Handle cases where a user update is attempted but the user does not exist.
+## Live Documentation
+- **Production**: [API Docs](https://assessment-test-thra.onrender.com/api/docs)
+- **Localhost**: Open [127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs) after running the server.
 
 ## Installation
 
 1. Clone the repository:
    ```sh
-   git clone https://github.com/FestusMike/Assessment_Activity
+   git clone https://github.com/FestusMike/Assessment_Activity.git
    cd Assessment_Activity
    ```
-
-2. Create a virtual environment and activate it:
+2. Create and activate a virtual environment:
    ```sh
    python -m venv venv
    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
    ```
-
 3. Install dependencies:
    ```sh
    pip install -r requirements.txt
    ```
-
-4. Run database migrations:
+4. Run migrations:
    ```sh
    python manage.py makemigrations users
    python manage.py migrate
    ```
-
 5. Start the development server:
    ```sh
    python manage.py runserver
@@ -42,59 +35,26 @@ This project provides an API for user account management using Django Rest Frame
 ## API Endpoints
 
 ### Create User
-- **Endpoint:** `POST /api/users/create`
-- **Request Body:**
-  ```json
-  {
-    "email": "user@example.com"
-  }
-  ```
-- **Response:**
-  ```json
-  {
-    "success": true,
-    "message": "User created successfully",
-    "data": {
-      "email": "user@example.com",
-      "first_name": null,
-      "last_name": null,
-      "age": null
-    }
-  }
-  ```
+**Endpoint:** `POST /api/users/create`
+```json
+{
+  "email": "user@example.com"
+}
+```
 
 ### Update User
-- **Endpoint:** `PATCH /api/users/populate`
-- **Request Body:**
-  ```json
-  {
-    "email": "existing@example.com",
-    "first_name": "John",
-    "last_name": "Doe",
-    "age": 30
-  }
-  ```
-- **Response:**
-  ```json
-  {
-    "success": true,
-    "message": "User updated successfully",
-    "data": {
-      "email": "existing@example.com",
-      "first_name": "John",
-      "last_name": "Doe",
-      "age": 30
-    }
-  }
-  ```
+**Endpoint:** `PATCH /api/users/populate`
+```json
+{
+  "email": "existing@example.com",
+  "first_name": "John",
+  "last_name": "Doe",
+  "age": 30
+}
+```
 
 ## Running Tests
-
-The project uses `pytest` for testing. To run the tests, execute:
+To run the tests, use:
 ```sh
 pytest
 ```
-
-
-This project is licensed under the MIT License.
-
